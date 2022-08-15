@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Exercise #7: Simple playlist </title>
-    <link rel="stylesheet" href="exercise7.css">
+    <link rel="stylesheet" href="./exercise7.css">
 
 </head>
 <body>
     <p>this is your playlist, when enter the song and hit add song a list should be created withe delete button as image
         below</p>
-    <img src="images/Screenshot_3.jpg" style="width: 90%;">
+    <img src="./images/Screenshot_3.jpg" style="width: 90%;">
     <form>
         <input type="text" id="songTextInput" size="40" placeholder="Song name">
         <input type="button" id="addButton" value="Add Song">
@@ -30,26 +30,25 @@
             //***************** li create ************************
             let t = songTextInput.value
             const CreatList = document.createElement("li");
-            const textAdd = document.createTextNode(t);
-            CreatList.appendChild(textAdd);
-
+            let liText=document.createTextNode(t);
+            CreatList.appendChild(liText);
             const element = document.getElementById("playlist")
             element.appendChild(CreatList);
             songTextInput.value = ""
 
-            //***************** dell create ************************
+            //***************** delete create ************************
             var dele = document.createElement("button");
             dele.innerHTML = 'Delete';
             dele.style.color = 'red';
             // dele.style.backgroundColor = 'white';
-
-            const delePos = document.getElementById("playlist")
-            delePos.appendChild(dele);
-        }
-            dell.onclick = function () { remo() };
+            CreatList.appendChild(dele);
+            dele.style.float="right"
+            dele.onclick = function () { remo() };
             function remo(){
-            li.remove();
-            }
+            CreatList.remove();}
+        }
+           
+            
         
 
 
